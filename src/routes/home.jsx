@@ -8,12 +8,14 @@ function Home()
 {
 
     const [selectedFile, setSelectedFile] = useState(null);
+    const [imageUp, setImage] = useState(null);
     const [respo, setRespo] = useState(null);
 
 
 
     const handleFileInputChange = (event) => {
         setSelectedFile(event.target.files[0]);
+        setImage(URL.createObjectURL(event.target.files[0]))
     }
   
 
@@ -46,6 +48,19 @@ function Home()
           .catch(error => {
               console.error('There was an error!', error);
           });
+    }  
+     const apiReq = (reader) => {
+      const  Response=
+        {
+            "id": "123",
+            "filename": "example.jpg",
+            "url": "https://example.com/images/123",
+            "answer": "Answer",
+            "width": 800,
+            "height":600
+        }
+        setTimeout(() => { setRespo(Response) }, 2000);
+        
     }
 
 
@@ -84,7 +99,7 @@ function Home()
                                     </div>
                                     <button 
                                         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-3 cursor-pointer"
-                                        onClick={handleSubmit}
+                                        onClick={apiReq}
                                     >
                                         Predict 
                                     </button>
@@ -102,19 +117,19 @@ function Home()
                                        ID:{respo?.id}
                                     </label>
                                     <label htmlFor="file-input" className="block text-gray-700 font-bold mb-2">
-                                       FileName:{respo?.filename}asdasd
+                                       FileName:{respo?.filename}
                                     </label> <label htmlFor="file-input" className="block text-gray-700 font-bold mb-2">
                                        Answer:{respo?.answer}
                                     </label><label htmlFor="file-input" className="block text-gray-700 font-bold mb-2">
                                        Height:{respo?.height}
                                     </label><label htmlFor="file-input" className="block text-gray-700 font-bold mb-2">
-                                       Weight:{respo?.weight}
+                                    Width:{respo?.width}
                                     </label>
                                     </div>
                                     <div className="relative ml-5">
                                     <img 
                                     style={{height:'200px'}}
-      src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"
+      src={imageUp}
       alt="new"
       />
                                     </div>
