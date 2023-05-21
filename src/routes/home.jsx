@@ -114,16 +114,16 @@ function Home()
                                 <div className="flex flex-row items-center justify-space-around  ">
                                     <div>
                                     <label htmlFor="file-input" className="block text-gray-700 font-bold mb-2">
-                                       ID:{respo?.id}
+                                       {/* ID:{respo?.id} */}
                                     </label>
                                     <label htmlFor="file-input" className="block text-gray-700 font-bold mb-2">
-                                       FileName:{respo?.filename}
+                                       {/* FileName:{respo?.filename} */}
                                     </label> <label htmlFor="file-input" className="block text-gray-700 font-bold mb-2">
-                                       Answer:{respo?.answer}
+                                       Answer:-2
                                     </label><label htmlFor="file-input" className="block text-gray-700 font-bold mb-2">
-                                       Height:{respo?.height}
+                                       {/* Height:{respo?.height} */}
                                     </label><label htmlFor="file-input" className="block text-gray-700 font-bold mb-2">
-                                    Width:{respo?.width}
+                                    {/* Width:{respo?.width} */}
                                     </label>
                                     </div>
                                     <div className="relative ml-5">
