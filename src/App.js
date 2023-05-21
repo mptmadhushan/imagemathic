@@ -3,7 +3,7 @@ import Login from "./routes/login";
 import Signup from "./routes/signup";
 import Userguide from "./routes/userguide";
 import Home from "./routes/home";
-
+import Tri from "./routes/trigonomaetric"
 function App() {
   return (
     <div className="App">
@@ -12,6 +12,7 @@ function App() {
         <Route index path="login" element={<Login />} /> 
         <Route path="Signup" element={<Signup />} />
         <Route index element={<Home />} />
+        <Route path="tri" element={<Tri/>}/>
         <Route path="Userguide" element={<Userguide />} />
         </Routes>
       </BrowserRouter>
